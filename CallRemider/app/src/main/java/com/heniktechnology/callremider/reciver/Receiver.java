@@ -41,7 +41,7 @@ public class Receiver extends BroadcastReceiver {
                                     +"smsMessage.getDisplayOriginatingAddress() :"+smsMessage.getDisplayOriginatingAddress()+HNLoger.Constants.NEW_LINE_SEPERATOR
 
                             );
-                            
+
                         }
                     }
                 }
