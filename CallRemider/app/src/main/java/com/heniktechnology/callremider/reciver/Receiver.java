@@ -5,8 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Telephony;
 import android.telephony.SmsMessage;
+import android.widget.Toast;
+
 import com.heniktechnology.callremider.constants.Constants;
 import com.heniktechnology.hncore.utility.HNLoger;
 
@@ -22,25 +23,39 @@ public class Receiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         try {
 
+            HNLoger.debug(TAG, "Working proparly onReceive");
             //SMS Reading
-            if (intent.getAction().equals(Telephony.Sms.Intents.SMS_RECEIVED_ACTION)) {
+            // if (intent.getAction().equals(Telephony.Sms.Intents.SMS_RECEIVED_ACTION))
+            {
                 Bundle intentExtras = intent.getExtras();
+
                 if (intentExtras != null) {
+
                     Object[] sms = (Object[]) intentExtras.get(Constants.SMS_FORMAT);
+
                     if (sms != null) {
-                        for (int i = 0; i < sms.length; ++i)
-                        {
-                            SmsMessage smsMessage = getIncomingMessage(sms[i],intentExtras);
+
+                        for (int i = 0; i < sms.length; ++i) {
+                            SmsMessage smsMessage = getIncomingMessage(sms[i], intentExtras);
                             String address = smsMessage.getOriginatingAddress();
 
-                            HNLoger.debug(TAG,"address : "+address + HNLoger.Constants.NEW_LINE_SEPERATOR
-                                    +"smsMessage.getDisplayMessageBody() :"+smsMessage.getDisplayMessageBody()+HNLoger.Constants.NEW_LINE_SEPERATOR
-                                    +"smsMessage.getMessageBody() :"+smsMessage.getMessageBody()+HNLoger.Constants.NEW_LINE_SEPERATOR
-                                    +"smsMessage.IndexOnIcc() :"+smsMessage.getIndexOnIcc()+HNLoger.Constants.NEW_LINE_SEPERATOR
-                                    +"smsMessage.getTimestampMillis() :"+smsMessage.getTimestampMillis()+HNLoger.Constants.NEW_LINE_SEPERATOR
-                                    +"smsMessage.getDisplayOriginatingAddress() :"+smsMessage.getDisplayOriginatingAddress()+HNLoger.Constants.NEW_LINE_SEPERATOR
+                            HNLoger.debug(TAG, "address : " + address + HNLoger.Constants.NEW_LINE_SEPERATOR
+                                    + "smsMessage.getDisplayMessageBody() :" + smsMessage.getDisplayMessageBody() + HNLoger.Constants.NEW_LINE_SEPERATOR
+                                    + "smsMessage.getMessageBody() :" + smsMessage.getMessageBody() + HNLoger.Constants.NEW_LINE_SEPERATOR
+                                    + "smsMessage.IndexOnIcc() :" + smsMessage.getIndexOnIcc() + HNLoger.Constants.NEW_LINE_SEPERATOR
+                                    + "smsMessage.getTimestampMillis() :" + smsMessage.getTimestampMillis() + HNLoger.Constants.NEW_LINE_SEPERATOR
+                                    + "smsMessage.getDisplayOriginatingAddress() :" + smsMessage.getDisplayOriginatingAddress() + HNLoger.Constants.NEW_LINE_SEPERATOR
 
                             );
+
+                            String text = "address : " + address + HNLoger.Constants.NEW_LINE_SEPERATOR
+                                    + "smsMessage.getDisplayMessageBody() :" + smsMessage.getDisplayMessageBody() + HNLoger.Constants.NEW_LINE_SEPERATOR
+                                    + "smsMessage.getMessageBody() :" + smsMessage.getMessageBody() + HNLoger.Constants.NEW_LINE_SEPERATOR
+                                    + "smsMessage.IndexOnIcc() :" + smsMessage.getIndexOnIcc() + HNLoger.Constants.NEW_LINE_SEPERATOR
+                                    + "smsMessage.getTimestampMillis() :" + smsMessage.getTimestampMillis() + HNLoger.Constants.NEW_LINE_SEPERATOR
+                                    + "smsMessage.getDisplayOriginatingAddress() :" + smsMessage.getDisplayOriginatingAddress() + HNLoger.Constants.NEW_LINE_SEPERATOR;
+
+                            Toast.makeText(context, text, Toast.LENGTH_LONG).show();
 
                         }
                     }
