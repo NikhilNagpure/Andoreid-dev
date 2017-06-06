@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">CallRemider</string>
-    <string name="submited_status">submited_status</string>
+    <string name="user_name">User Name</string>
+    <string name="user_login_id">User Login ID</string>
+    <string name="user_password">User Password</string>
+
 
 </resources>

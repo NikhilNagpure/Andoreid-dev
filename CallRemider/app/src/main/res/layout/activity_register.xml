@@ -12,19 +12,62 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.heniktechnology.callremider.register_user.RegisterActivity">
 
-    <com.heniktechnology.callremider.material_view.MaterialEditText
-        android:id="@+id/mactvUserName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/submited_status"
-        android:textCursorDrawable="@drawable/text_cursor_cyan"
-        app:met_baseColor="@color/colorThemeBlue"
-        app:met_floatingLabel="highlight"
-        app:met_floatingLabelTextColor="@color/colorThemeBlue"
-        app:met_helperTextColor="@color/colorThemeBlue"
-        app:met_primaryColor="?colorAccent"
-        app:met_singleLineEllipsis="true"
-    />
 
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical">
+        <com.heniktechnology.callremider.material_view.MaterialEditText
+            android:id="@+id/mactvUserFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/user_name"
+            android:textCursorDrawable="@drawable/text_cursor_cyan"
+            app:met_baseColor="@color/colorThemeBlue"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelTextColor="@color/colorThemeBlue"
+            app:met_helperTextColor="@color/colorThemeBlue"
+            app:met_primaryColor="?colorAccent"
+            app:met_singleLineEllipsis="true"
+        />
+        <com.heniktechnology.callremider.material_view.MaterialEditText
+            android:id="@+id/mactvUserLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/user_name"
+            android:textCursorDrawable="@drawable/text_cursor_cyan"
+            app:met_baseColor="@color/colorThemeBlue"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelTextColor="@color/colorThemeBlue"
+            app:met_helperTextColor="@color/colorThemeBlue"
+            app:met_primaryColor="?colorAccent"
+            app:met_singleLineEllipsis="true"
+        />
+        <com.heniktechnology.callremider.material_view.MaterialEditText
+            android:id="@+id/mactvUserLoginID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/user_name"
+            android:textCursorDrawable="@drawable/text_cursor_cyan"
+            app:met_baseColor="@color/colorThemeBlue"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelTextColor="@color/colorThemeBlue"
+            app:met_helperTextColor="@color/colorThemeBlue"
+            app:met_primaryColor="?colorAccent"
+            app:met_singleLineEllipsis="true"
+        />
+        <com.heniktechnology.callremider.material_view.MaterialEditText
+            android:id="@+id/mactvUserPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/user_name"
+            android:textCursorDrawable="@drawable/text_cursor_cyan"
+            app:met_baseColor="@color/colorThemeBlue"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelTextColor="@color/colorThemeBlue"
+            app:met_helperTextColor="@color/colorThemeBlue"
+            app:met_primaryColor="?colorAccent"
+            app:met_singleLineEllipsis="true"
+        />
+    </LinearLayout>
 
 </RelativeLayout>

@@ -3,11 +3,13 @@ package com.heniktechnology.callremider.pojo;
 
 import com.heniktechnology.hncore.dynamic_data_base.Model;
 import com.heniktechnology.hncore.dynamic_data_base.annotation.Column;
+import com.heniktechnology.hncore.dynamic_data_base.annotation.Table;
 
 /**
  * Created by NikhilNagpure on 31-05-2017.
  */
 
+@Table(name = "UserRegister")
 public class UserRegister extends Model {
 
     @Column(name = "userLoginId")

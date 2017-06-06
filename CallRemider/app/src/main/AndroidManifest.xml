@@ -2,10 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.heniktechnology.callremider">
 
-    <uses-permission android:name="android.permission.WRITE_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 
     <application
         android:allowBackup="true"
@@ -13,49 +12,50 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="AA_DB_NAME"
-            android:value="RestClient.db" />
+            android:value="RestClient.db"/>
         <meta-data
             android:name="AA_DB_VERSION"
-            android:value="1" />
-
+            android:value="1"/>
         <meta-data
             android:name="AA_MODELS"
-            android:value="com.heniktechnology.callremider.pojo.UserRegister" />
+            android:value="com.heniktechnology.callremider.pojo.UserRegister"/>
 
         <activity android:name=".splash_screen.SplashActivity">
         </activity>
         <activity android:name=".home_screen.HomeScreenActivity">
         </activity>
         <activity android:name=".register_user.RegisterActivity">
+
+        </activity>
+
+        <receiver
+            android:name=".reciver.Receiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+
+                <category android:name="android.intent.category.DEFAULT">
+                </category>
+            </intent-filter>
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.provider.Telephony.GSM_SMS_RECEIVED">
+                </action>
+
+                <category android:name="android.intent.category.DEFAULT">
+                </category>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".alarm.AlramActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-
-        <receiver
-            android:name=".reciver.Receiver"
-            android:enabled="true"
-            android:exported="true" >
-            <intent-filter android:priority="2147483647" >
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-                <category android:name="android.intent.category.DEFAULT" >
-                </category>
-            </intent-filter>
-            <intent-filter android:priority="2147483647" >
-                <action android:name="android.provider.Telephony.GSM_SMS_RECEIVED" >
-                </action>
-                <category android:name="android.intent.category.DEFAULT" >
-                </category>
-            </intent-filter>
-        </receiver>
-
     </application>
-
 
 </manifest>

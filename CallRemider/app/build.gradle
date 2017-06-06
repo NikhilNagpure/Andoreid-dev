@@ -28,4 +28,7 @@ dependencies {
     compile group: 'com.nineoldandroids', name: 'library', version: '2.4.0'
     compile 'com.android.support:appcompat-v7:25.0.0'
     testCompile 'junit:junit:4.12'
+
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.7'
+
 }
